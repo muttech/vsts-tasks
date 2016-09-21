@@ -189,6 +189,15 @@
       "visibleRule": "signMethod = file"
     },
     {
+      "name": "xcode8AutomaticSigning",
+      "type": "boolean",
+      "label": "ms-resource:loc.input.label.xcode8AutomaticSigning",
+      "defaultValue": false,
+      "required": false,
+      "helpMarkDown": "ms-resource:loc.input.help.xcode8AutomaticSigning",
+      "groupName": "sign"
+    },
+    {
       "name": "args",
       "type": "string",
       "label": "ms-resource:loc.input.label.args",

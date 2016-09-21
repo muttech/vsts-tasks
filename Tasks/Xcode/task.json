@@ -189,6 +189,15 @@
             "visibleRule": "signMethod = file"
         },
         {
+            "name": "xcode8AutomaticSigning",
+            "type": "boolean",
+            "label": "Automatic Signing with Xcode 8",
+            "defaultValue": false,
+            "required": false,
+            "helpMarkDown": "Select this if you have an Xcode 8 project setup for Automatic Signing",
+            "groupName": "sign"
+        },
+        {
             "name": "args",
             "type": "string",
             "label": "Arguments",
