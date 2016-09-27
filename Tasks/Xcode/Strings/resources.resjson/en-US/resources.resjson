@@ -17,15 +17,12 @@
   "loc.input.label.scheme": "Scheme",
   "loc.input.help.scheme": "Optional scheme name in Xcode. *Must be a shared scheme* (shared checkbox under managed schemes in Xcode). **Required if Workspace is specified.**",
   "loc.input.label.packageApp": "Create App Package",
-  "loc.input.help.packageApp": "Indicates whether an IPA should be generated as a part of the build.",
+  "loc.input.help.packageApp": "Indicates whether an IPA should be generated as a part of the build. For exporting archives with Xcode 7 and Xcode 8, review additional inputs in the `Package Options` section.",
   "loc.input.label.archivePath": "Archive Path",
   "loc.input.help.archivePath": "The path to the archive file (.xcarchive), or the archive that should be exported.",
   "loc.input.label.exportPath": "Export Path",
   "loc.input.help.exportPath": "Destination path for the product exported from an archive.",
-  "loc.input.label.exportFormat": "Export Format",
-  "loc.input.help.exportFormat": "The format to which the archive should be exported. Valid formats are IPA, PKG and APP. If not specified, xcodebuild will attempt to auto-detect the format as either IPA or PKG.",
   "loc.input.label.exportOptions": "Export Options",
-  "loc.input.help.exportOptions": "Path to a plist file that configures archive exporting.",
   "loc.input.label.exportMethod": "Export Method",
   "loc.input.help.exportMethod": "Method for how Xcode should export the archive. E.g. app-store, package, ad-hoc, enterprise, development. Defaults to development if not specified.",
   "loc.input.label.exportTeamId": "TeamId",
@@ -82,5 +79,6 @@
   "loc.messages.NoTestResultsFound": "No test result files matching %s were found, so publishing JUnit test results is being skipped.",
   "loc.messages.XcodeSuccess": "Xcode task execution completed with no errors.",
   "loc.messages.TempKeychainDeleteFailed": "Failed to delete temporary keychain %s created during the build.",
-  "loc.messages.ProvProfileDeleteFailed": "Failed to delete the provisioning profile %s."
+  "loc.messages.ProvProfileDeleteFailed": "Failed to delete the provisioning profile %s.",
+  "loc.messages.ExportOptionsPlistInvalidFilePath": "Export Options have not been specified. This will cause failures when trying to export an archive with Xcode 8."
 }

@@ -106,21 +106,11 @@
       "groupName": "package"
     },
     {
-      "name": "exportFormat",
-      "type": "string",
-      "label": "ms-resource:loc.input.label.exportFormat",
-      "defaultValue": "",
-      "required": false,
-      "helpMarkDown": "ms-resource:loc.input.help.exportFormat",
-      "groupName": "package"
-    },
-    {
       "name": "exportOptions",
       "type": "pickList",
       "label": "ms-resource:loc.input.label.exportOptions",
       "defaultValue": "none",
       "required": false,
-      "helpMarkDown": "ms-resource:loc.input.help.exportOptions",
       "groupName": "package",
       "options": {
         "none": "None",
@@ -155,7 +145,8 @@
       "defaultValue": "",
       "required": false,
       "helpMarkDown": "ms-resource:loc.input.help.exportOptionsPlist",
-      "groupName": "package"
+      "groupName": "package",
+      "visibleRule": "exportOptions == plist"
     },
     {
       "name": "xcode8AutomaticSigning",
@@ -351,6 +342,7 @@
     "NoTestResultsFound": "ms-resource:loc.messages.NoTestResultsFound",
     "XcodeSuccess": "ms-resource:loc.messages.XcodeSuccess",
     "TempKeychainDeleteFailed": "ms-resource:loc.messages.TempKeychainDeleteFailed",
-    "ProvProfileDeleteFailed": "ms-resource:loc.messages.ProvProfileDeleteFailed"
+    "ProvProfileDeleteFailed": "ms-resource:loc.messages.ProvProfileDeleteFailed",
+    "ExportOptionsPlistInvalidFilePath": "ms-resource:loc.messages.ExportOptionsPlistInvalidFilePath"
   }
 }

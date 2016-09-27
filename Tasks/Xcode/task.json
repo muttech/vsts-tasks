@@ -85,7 +85,7 @@
             "label": "Create App Package",
             "defaultValue": true,
             "required": true,
-            "helpMarkDown": "Indicates whether an IPA should be generated as a part of the build."
+            "helpMarkDown": "Indicates whether an IPA should be generated as a part of the build. For exporting archives with Xcode 7 and Xcode 8, review additional inputs in the `Package Options` section."
         },
         {
             "name": "archivePath",
@@ -106,21 +106,11 @@
             "groupName": "package"
         },
         {
-            "name": "exportFormat",
-            "type": "string",
-            "label": "Export Format",
-            "defaultValue": "",
-            "required": false,
-            "helpMarkDown": "The format to which the archive should be exported. Valid formats are IPA, PKG and APP. If not specified, xcodebuild will attempt to auto-detect the format as either IPA or PKG.",
-            "groupName": "package"
-        },
-        {
             "name": "exportOptions",
             "type": "pickList",
             "label": "Export Options",
             "defaultValue": "none",
             "required": false,
-            "helpMarkDown": "Path to a plist file that configures archive exporting.",
             "groupName": "package",
             "options": {
                 "none": "None",
@@ -155,7 +145,8 @@
             "defaultValue": "",
             "required": false,
             "helpMarkDown": "Path to a plist file that configures archive exporting.",
-            "groupName": "package"
+            "groupName": "package",
+            "visibleRule": "exportOptions == plist"
         },
         {
             "name": "xcode8AutomaticSigning",
@@ -351,6 +342,8 @@
         "NoTestResultsFound": "No test result files matching %s were found, so publishing JUnit test results is being skipped.",
         "XcodeSuccess": "Xcode task execution completed with no errors.",
         "TempKeychainDeleteFailed": "Failed to delete temporary keychain %s created during the build.",
-        "ProvProfileDeleteFailed": "Failed to delete the provisioning profile %s."
+        "ProvProfileDeleteFailed": "Failed to delete the provisioning profile %s.",
+        "ExportOptionsPlistInvalidFilePath": "Export Options Plist file %s does not exist. Provide the path to a valid plist file.",
+        "ExportOptionsPlistInvalidFilePath": "Export Options have not been specified. This might cause failures when trying to export an archive or produce an invalid IPA for uploading to iTunes Connect."
     }
 }
