@@ -299,7 +299,7 @@ target.testLegacy = function() {
     mkdir('-p', tempDir);
 
     // suite path
-    var suitePath = path.join(testPath, options.suite || 'L0/VsTest', '_suite.js');
+    var suitePath = path.join(testPath, options.suite || 'L0/**', '_suite.js');
     var tfBuild = ('' + process.env['TF_BUILD']).toLowerCase() == 'true';
     util.runMocha(suitePath);
 }
