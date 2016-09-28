@@ -257,7 +257,7 @@ target.test = function() {
         fail(`Unable to find tests using the following patterns: ${JSON.stringify([pattern1, pattern2])}`, true);
     }
 
-    run('mocha ' + testsSpec.join(' '), true);
+    util.runMocha(testsSpec.join(' '));
 }
 
 //
@@ -301,7 +301,7 @@ target.testLegacy = function() {
     // suite path
     var suitePath = path.join(testPath, options.suite || 'L0/**', '_suite.js');
     var tfBuild = ('' + process.env['TF_BUILD']).toLowerCase() == 'true';
-    run('mocha ' + suitePath, true);
+    util.runMocha(suitePath);
 }
 
 target.package = function() {

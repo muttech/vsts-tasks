@@ -233,7 +233,7 @@ var matchRemove = function (pattern, sourceRoot, options) {
 }
 exports.matchRemove = matchRemove;
 
-exports.run = function (cl, echo) {
+var run = function (cl, echo) {
     console.log();
     console.log('> ' + cl);
     echo = echo || process.env['TASK_BUILD_VERBOSE'];
@@ -249,10 +249,19 @@ exports.run = function (cl, echo) {
             console.error(err.output ? err.output.toString() : err.message);
         }
 
-        exit(1);
+        process.exit(1);
     }
 }
-var run = exports.run;
+exports.run = run;
+
+var runMocha = function (args) {
+    // run the mocha js file rather than the wrapper shell/cmd script.
+    // the .cmd wrapper does not propagate the exit code.
+    var mochaJSPath = path.join(__dirname, 'node_modules', 'mocha', 'bin', 'mocha');
+    cl = `node ${mochaJSPath} ${args}`;
+    run(cl, /*echo*/true);
+}
+exports.runMocha = runMocha;
 
 var ensureTool = function (name, versionArgs, noExec) {
     console.log(name + ' tool:');
